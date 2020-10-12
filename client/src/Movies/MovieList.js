@@ -1,14 +1,15 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 export default function MovieList(props) {
+
 
   return (
     <div className="movie-list">
       {props.movies.map((movie) => (
-        <NavLink key={movie.id} to={`movies/${movie.id}`}>
+        <NavLink style={{'textDecoration':'none', 'color':'black'}}key={movie.id} to={`movies/${movie.id}`}>
           <MovieDetails key={movie.id} movie={movie} />
-        </NavLink>
+          </NavLink>
       ))}
     </div>
   );
